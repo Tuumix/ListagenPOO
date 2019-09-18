@@ -18,7 +18,7 @@ public class ListaGenPOO {
      */
     public static void main(String[] args) {
         Listagen lista = new Listagen();
-        lista.Construir("[[a,b]]");
+        lista.Construir("[a,b]");
     }
     
 }

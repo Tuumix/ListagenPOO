@@ -18,6 +18,13 @@ public class Listagen {
     public Listagen() {
         this.L = null;
     }
+    
+    No nula(Lista L)
+    {
+        if(L == null)
+            return null;
+        return L;
+    }
 
     private String getAtomo(int pos, String entrada) {
         String aux = "";
@@ -53,6 +60,7 @@ public class Listagen {
         String aux;
         No ultimo = null;
         Stack pilha = new Stack();
+
         for (int i = 0; i < entrada.length(); i++) {
             if (L == null) {
                 if (entrada.charAt(i) == '[') {
@@ -72,6 +80,7 @@ public class Listagen {
                 {
                     ((Lista)ultimo).setCauda(Cons(null,null));
                     ultimo = ((Lista)ultimo).getCauda();
+                    pilha.push(ultimo);
                 }
                 if (Character.isLetter(entrada.charAt(i))) {
                     aux = "";
@@ -79,6 +88,7 @@ public class Listagen {
                         aux += entrada.charAt(i++) + "";
                     }
                     ((Lista)ultimo).setCabeca(criaT(aux));
+                    i--;
                 }
                 if(entrada.charAt(i) == ']')
                     ultimo = ((Lista)pilha.pop());
@@ -87,7 +97,13 @@ public class Listagen {
     }
 
     public void exibe() {
+        Stack pilha = new Stack();
         
+        pilha.push(L);
+        while(pilha.isEmpty())
+        {
+            
+        }
     }
 
 }
