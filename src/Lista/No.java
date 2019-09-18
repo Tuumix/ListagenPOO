@@ -9,6 +9,6 @@ package Lista;
  *
  * @author hiroshi
  */
-public class No extends Listagen{
+public class No{
     
 }
