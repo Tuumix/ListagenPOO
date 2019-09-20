@@ -19,9 +19,8 @@ public class Listagen {
     public Listagen() {
         this.L = null;
     }
-    
-    public String getcadeia()
-    {
+
+    public String getcadeia() {
         return cadeia;
     }
 
@@ -60,6 +59,21 @@ public class Listagen {
         } else {
             return new Lista(H, T);
         }
+    }
+
+    No head(Lista L) {
+        return ((Lista) L).getCabeca();
+    }
+
+    No tail(Lista L) {
+        return ((Lista) L).getCauda();
+    }
+
+    Boolean Atomo(No L) {
+        if (L instanceof Atomo) {
+            return true;
+        }
+        return false;
     }
 
     public void Construir(String entrada) {
@@ -101,45 +115,27 @@ public class Listagen {
         }
     }
 
-    No head(Lista L) {
-        return ((Lista) L).getCabeca();
+    public void printa() {
+        print_recursive(((Lista) L));
     }
 
-    No tail(Lista L) {
-        return ((Lista) L).getCauda();
-    }
-
-    Boolean Atomo(No L) {
+    public void print_recursive(No L) {
         if (L instanceof Atomo) {
-            return true;
-        }
-        return false;
-    }
-    
-    public void printa()
-    {
-        print_recursive(((Lista)L));
-    }
-    
-    public void print_recursive(No L)
-    {
-        if(L instanceof Atomo)
-            cadeia += (((Atomo)L).getInfo());
-        else
-        {
+            cadeia += (((Atomo) L).getInfo());
+        } else {
             cadeia += "[";
-            while(nula(L) != null && !Atomo(L))
-            {
-                print_recursive((((Lista)L).getCabeca()));
-                L = tail(((Lista)L));
-                if(L != null)
+            while (nula(L) != null && !Atomo(L)) {
+                print_recursive((((Lista) L).getCabeca()));
+                L = tail(((Lista) L));
+                if (L != null) {
                     cadeia += ",";
+                }
             }
             cadeia += "]";
-        }      
+        }
     }
 
-    public void exibe() {
+    /*public void exibe() {
         Stack pilha = new Stack();
         pilha.push((Lista) L);
         No aux = null;
@@ -165,6 +161,5 @@ public class Listagen {
                 aux = (((Lista)pilha.pop()));
         }
         System.out.println(""+str);
-    }
-
+    }*/
 }
