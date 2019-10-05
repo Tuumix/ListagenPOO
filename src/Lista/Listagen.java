@@ -79,21 +79,21 @@ public class Listagen {
     public void Construir(String entrada) {
         String aux;
         No ultimo = null;
-        Stack pilha = new Stack();
-
+        ListaPilha pilha = new ListaPilha();
+        //Stack pilha = new Stack();
         for (int i = 0; i < entrada.length(); i++) {
             if (L == null) {
                 if (entrada.charAt(i) == '[') {
                     L = Cons(null, null);
                     ultimo = L;
-                    pilha.push(ultimo);
+                    pilha.push(((Lista)ultimo));
                 } else {
                     System.out.println("Há um atomo no inicio da lista");
                 }
             } else {
                 if (entrada.charAt(i) == '[') {
                     ((Lista) ultimo).setCabeca(Cons(null, null));
-                    pilha.push(ultimo);
+                    pilha.push(((Lista)ultimo));
                     ultimo = ((Lista) ultimo).getCabeca();
                 }
                 if (entrada.charAt(i) == ',') {
@@ -134,32 +134,4 @@ public class Listagen {
             cadeia += "]";
         }
     }
-
-    /*public void exibe() {
-        Stack pilha = new Stack();
-        pilha.push((Lista) L);
-        No aux = null;
-        String str = "";
-        
-        while (!pilha.isEmpty()) {
-            aux = ((Lista) pilha.pop());
-            while (nula(aux) != null && !Atomo(aux)) {
-                System.out.println("[");
-                pilha.push(((Lista)aux));
-                aux = (((Lista)aux).getCabeca());
-            }
-            if(Atomo(aux))
-            {
-                System.out.println(""+(((Atomo)aux).getInfo()));
-                aux = (((Lista)pilha.pop()));
-            }
-            
-            aux = tail(((Lista)aux));
-            if(aux != null)
-                System.out.println(",");
-            else
-                aux = (((Lista)pilha.pop()));
-        }
-        System.out.println(""+str);
-    }*/
 }

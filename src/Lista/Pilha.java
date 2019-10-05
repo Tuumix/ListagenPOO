@@ -10,20 +10,20 @@ package Lista;
  * @author hiroshi
  */
 public class Pilha {
-    private Lista p;
+    private Lista no;
     private Pilha prox;
 
-    public Pilha(Lista p) {
-        this.p = p;
+    public Pilha(Lista no) {
+        this.no = no;
         this.prox = null;
     }
 
-    public Lista getP() {
-        return p;
+    public Lista getNo() {
+        return no;
     }
 
-    public void setP(Lista p) {
-        this.p = p;
+    public void setNo(Lista no) {
+        this.no = no;
     }
 
     public Pilha getProx() {
@@ -33,6 +33,5 @@ public class Pilha {
     public void setProx(Pilha prox) {
         this.prox = prox;
     }
-    
-    
+   
 }
