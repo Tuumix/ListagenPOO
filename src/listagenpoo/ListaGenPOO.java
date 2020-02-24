@@ -19,8 +19,8 @@ public class ListaGenPOO {
     public static void main(String[] args) {
         Listagen lista = new Listagen();
         //lista.Construir("[[a,b]]");
-        //lista.Construir("[aa,[bb,cc],[dd,[ee],ff,gg],hh]");
-        lista.Construir("[[[a,b]]]");
+        lista.Construir("[aa,[bb,cc],[dd,[ee],ff,gg],hh]");
+        //lista.Construir("[[[a,b]]]");
         lista.printa();
         System.out.println(""+lista.getcadeia());
     }
